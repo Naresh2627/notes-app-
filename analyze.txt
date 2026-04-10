@@ -1,0 +1,6 @@
+﻿Analyzing notes_app...                                          
+
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\home_page.dart:102:45 - deprecated_member_use
+  error - The name 'AuthProvider' is defined in the libraries 'package:firebase_auth_platform_interface/src/auth_provider.dart (via package:firebase_auth/firebase_auth.dart)' and 'package:notes_app/providers/auth_provider.dart' - lib\pages\login_page.dart:13:26 - ambiguous_import
+  error - The name 'AuthProvider' is defined in the libraries 'package:firebase_auth_platform_interface/src/auth_provider.dart (via package:firebase_auth/firebase_auth.dart)' and 'package:notes_app/providers/auth_provider.dart' - lib\pages\login_page.dart:39:40 - ambiguous_import
+
