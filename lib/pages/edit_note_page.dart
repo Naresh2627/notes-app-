@@ -12,7 +12,7 @@ class EditNotePage extends StatelessWidget {
 
   Future<void> updateNote(BuildContext context) async {
     try {
-      await context.read<NoteProvider>().updateNote(docId);
+      await context.read<NoteProvider>().updateNote(docId, context);
       if (context.mounted) {
         Navigator.pop(context);
       }

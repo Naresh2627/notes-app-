@@ -99,6 +99,51 @@ class HomePage extends StatelessWidget {
                               note.content,
                               style: TextStyle(color: subtitleColor),
                             ),
+                            if (note.youtubeTitle != null || note.youtubeThumbnailUrl != null)
+                              Padding(
+                                padding: const EdgeInsets.only(top: 12),
+                                child: Container(
+                                  padding: const EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    color: isDark ? const Color(0xFF1E1E24) : const Color(0xFFF0F2F7),
+                                    borderRadius: BorderRadius.circular(12),
+                                    border: Border.all(
+                                      color: isDark ? Colors.white12 : Colors.black12,
+                                    ),
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      if (note.youtubeThumbnailUrl != null)
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(8),
+                                          child: Image.network(
+                                            note.youtubeThumbnailUrl!,
+                                            height: 120,
+                                            width: double.infinity,
+                                            fit: BoxFit.cover,
+                                            errorBuilder: (context, error, stackTrace) =>
+                                                const Icon(Icons.video_library),
+                                          ),
+                                        ),
+                                      if (note.youtubeTitle != null)
+                                        Padding(
+                                          padding: const EdgeInsets.only(top: 8),
+                                          child: Text(
+                                            note.youtubeTitle!,
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 13,
+                                              color: isDark ? Colors.white : Colors.black87,
+                                            ),
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                           ],
                         ),
                       ),

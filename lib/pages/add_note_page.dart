@@ -7,7 +7,7 @@ class AddNotePage extends StatelessWidget {
 
   Future<void> saveNote(BuildContext context) async {
     try {
-      await context.read<NoteProvider>().addNote();
+      await context.read<NoteProvider>().addNote(context);
       if (context.mounted) {
         Navigator.pop(context);
       }

@@ -6,6 +6,9 @@ class Note {
   final String content;
   final String? userId;
   final Timestamp? createdAt;
+  final String? youtubeTitle;
+  final String? youtubeDescription;
+  final String? youtubeThumbnailUrl;
 
   Note({
     this.id,
@@ -13,6 +16,9 @@ class Note {
     required this.content,
     this.userId,
     this.createdAt,
+    this.youtubeTitle,
+    this.youtubeDescription,
+    this.youtubeThumbnailUrl,
   });
 
   factory Note.fromMap(Map<String, dynamic> data, String documentId) {
@@ -22,6 +28,9 @@ class Note {
       content: data['content'] ?? '',
       userId: data['userId'],
       createdAt: data['createdAt'] as Timestamp?,
+      youtubeTitle: data['youtubeTitle'],
+      youtubeDescription: data['youtubeDescription'],
+      youtubeThumbnailUrl: data['youtubeThumbnailUrl'],
     );
   }
 
@@ -36,6 +45,15 @@ class Note {
     if (createdAt != null) {
       map['createdAt'] = createdAt;
     }
+    if (youtubeTitle != null) {
+      map['youtubeTitle'] = youtubeTitle;
+    }
+    if (youtubeDescription != null) {
+      map['youtubeDescription'] = youtubeDescription;
+    }
+    if (youtubeThumbnailUrl != null) {
+      map['youtubeThumbnailUrl'] = youtubeThumbnailUrl;
+    }
     return map;
   }
 
@@ -45,6 +63,9 @@ class Note {
     String? content,
     String? userId,
     Timestamp? createdAt,
+    String? youtubeTitle,
+    String? youtubeDescription,
+    String? youtubeThumbnailUrl,
   }) {
     return Note(
       id: id ?? this.id,
@@ -52,6 +73,9 @@ class Note {
       content: content ?? this.content,
       userId: userId ?? this.userId,
       createdAt: createdAt ?? this.createdAt,
+      youtubeTitle: youtubeTitle ?? this.youtubeTitle,
+      youtubeDescription: youtubeDescription ?? this.youtubeDescription,
+      youtubeThumbnailUrl: youtubeThumbnailUrl ?? this.youtubeThumbnailUrl,
     );
   }
 }
